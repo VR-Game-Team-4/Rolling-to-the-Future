@@ -43,6 +43,6 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         playerRigidbody.AddRelativeForce(-strafe * runSpeed, 0, -moving * runSpeed);
-        playerRigidbody.velocity = Vector3.ClampMagnitude(playerRigidbody.velocity, 2 * runSpeed);
+        playerRigidbody.linearVelocity = Vector3.ClampMagnitude(playerRigidbody.linearVelocity, 2 * runSpeed);
     }
 }

@@ -9,7 +9,7 @@ public class BallController : MonoBehaviour
   public float fallYThreshold = -10f;
 
   [Header("Goal Settings")]
-  [Tooltip("²×ÂIª«¥ó¡A¥i¥H©ì¤J¦h­Ó²×ÂI")]
+  [Tooltip("ï¿½ï¿½ï¿½Iï¿½ï¿½ï¿½ï¿½Aï¿½iï¿½Hï¿½ï¿½Jï¿½hï¿½Ó²ï¿½ï¿½I")]
   public Collider[] goalColliders;
 
   public Color goalColor = Color.green;
@@ -44,7 +44,7 @@ public class BallController : MonoBehaviour
       Rigidbody rb = GetComponent<Rigidbody>();
       if (rb != null)
       {
-        rb.velocity = Vector3.zero;
+        rb.linearVelocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
       }
 
