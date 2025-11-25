@@ -24,7 +24,7 @@ public class StretchAlongZ : MonoBehaviour
     transform.position = (leftHand.position + rightHand.position) * 0.5f;
 
     // 2. 讓 local +Z 對準右手方向
-    Vector3 direction = (rightHand.position - leftHand.position).normalized;
+    Vector3 direction = (leftHand.position - rightHand.position).normalized;
     transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
 
     // 3. 計算兩手實際距離
