@@ -21,7 +21,7 @@ public class StretchAlongZ : MonoBehaviour
         if (!leftHand || !rightHand) return;
 
         // 1. 放在兩手中點
-        transform.position = (leftHand.position + rightHand.position) * 0.5f;
+        transform.position = rightHand.position;
 
         // 2. 讓 local +Z 對準右手方向
         Vector3 direction = (leftHand.position - rightHand.position).normalized;
