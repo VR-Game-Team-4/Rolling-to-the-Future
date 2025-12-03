@@ -84,8 +84,6 @@ MonoBehaviour:
   lateLatchingMode: 0
   lateLatchingDebug: 0
   optimizeMultiviewRenderRegions: 0
-  multiviewRenderRegionsOptimizationMode: 0
-  m_hasMigratedMultiviewRenderRegions: 1
   spacewarpMotionVectorTextureFormat: 0
 --- !u!114 &-7851276732268115498
 MonoBehaviour:
@@ -103,7 +101,6 @@ MonoBehaviour:
   - {fileID: 2340522590424506867}
   - {fileID: -6685017212211425929}
   - {fileID: 8540948580635512706}
-  - {fileID: -6002667210538219514}
   - {fileID: -7154868064654966586}
   - {fileID: -2400759867466264417}
   - {fileID: -9189665736396024064}
@@ -132,11 +129,6 @@ MonoBehaviour:
   m_spacewarpMotionVectorTextureFormat: 0
   m_optimizeBufferDiscards: 0
   m_symmetricProjection: 0
-  m_optimizeMultiviewRenderRegions: 0
-  m_multiviewRenderRegionsOptimizationMode: 0
-  m_hasMigratedMultiviewRenderRegionSetting: 1
-  m_foveatedRenderingApi: 0
-  m_useOpenXRPredictedTime: 0
 --- !u!114 &-7412738173451151906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -405,7 +397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feeef8d85de8db242bdda70cc7ff5acd, type: 3}
   m_Name: OculusTouchControllerProfile Android
   m_EditorClassIdentifier: 
-  m_enabled: 0
+  m_enabled: 1
   nameUi: Oculus Touch Controller Profile
   version: 0.0.1
   featureIdInternal: com.unity.openxr.feature.input.oculustouch
@@ -533,7 +525,6 @@ MonoBehaviour:
   company: Unity
   priority: 0
   required: 0
-  m_UseRightHandedNDC: 0
 --- !u!114 &-2889837813791540567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -607,11 +598,9 @@ MonoBehaviour:
   m_Name: Android
   m_EditorClassIdentifier: 
   features:
-  - {fileID: -3691708499328047547}
   - {fileID: 3445537174219429416}
   - {fileID: -6298694769350978375}
   - {fileID: -2881044627308336377}
-  - {fileID: -646138914242950608}
   - {fileID: -7412738173451151906}
   - {fileID: 3824085016161168990}
   - {fileID: 8750786866893747137}
@@ -639,11 +628,6 @@ MonoBehaviour:
   m_spacewarpMotionVectorTextureFormat: 0
   m_optimizeBufferDiscards: 0
   m_symmetricProjection: 0
-  m_optimizeMultiviewRenderRegions: 0
-  m_multiviewRenderRegionsOptimizationMode: 0
-  m_hasMigratedMultiviewRenderRegionSetting: 1
-  m_foveatedRenderingApi: 0
-  m_useOpenXRPredictedTime: 0
 --- !u!114 &-1782931898286425519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -966,7 +950,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4710975c7840e7d499bbb3757c22b0a5, type: 3}
   m_Name: MetaXRSubsampledLayout Android
   m_EditorClassIdentifier: 
-  m_enabled: 0
+  m_enabled: 1
   nameUi: Meta XR Subsampled Layout
   version: 0.0.1
   featureIdInternal: com.meta.openxr.feature.subsampledLayout
