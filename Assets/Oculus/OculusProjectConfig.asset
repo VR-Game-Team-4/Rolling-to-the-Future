@@ -16,7 +16,7 @@ MonoBehaviour:
   allowOptional3DofHeadTracking: 0
   handTrackingSupport: 1
   handTrackingFrequency: 0
-  handTrackingVersion: 0
+  handTrackingVersion: 2
   anchorSupport: 1
   sharedAnchorSupport: 2
   renderModelSupport: 0
@@ -26,7 +26,7 @@ MonoBehaviour:
   eyeTrackingSupport: 0
   virtualKeyboardSupport: 0
   colocationSessionSupport: 1
-  sceneSupport: 2
+  sceneSupport: 1
   boundaryVisibilitySupport: 0
   disableBackups: 1
   enableNSCConfig: 1
