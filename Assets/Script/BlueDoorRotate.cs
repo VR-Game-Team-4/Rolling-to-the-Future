@@ -1,35 +1,35 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class BlueDoor : MonoBehaviour
 {
-    public float openAngle = 90f;
-    public float speed = 3f;
+    public float openAngle = 90f;   // é€™æ‰‡é–€è¦æ‰“é–‹å¹¾åº¦ï¼ˆå¯ä»¥åœ¨ Inspector èª¿ï¼‰
+    public float speed = 3f;       // æ—‹è½‰é€Ÿåº¦
 
-    private Quaternion closedRot;
-    private Quaternion openRot;
-
-    private static bool globalIsOpen = false;   // Shared by ALL door scripts
+    private Quaternion closedRot;  // é—œé–€æ™‚çš„æ—‹è½‰
+    private Quaternion openRot;    // é–‹é–€æ™‚çš„æ—‹è½‰
+    private bool isOpen = false;   // é€™ä¸€æ‰‡é–€ç›®å‰æ˜¯ä¸æ˜¯é–‹çš„
 
     private void Start()
     {
-        // ¥Î localRotation ·íÃöªù«º¶Õ
+        // ç”¨ã€Œè‡ªå·±çš„ localRotationã€ç•¶é—œé–€å§¿å‹¢
         closedRot = transform.localRotation;
-        // ¦bÃöªù«º¶Õªº°òÂ¦¤W¡AÂ¶¡u¦Û¤v Y ¶b¡v¦hÂà openAngle «×
+
+        // åœ¨é—œé–€å§¿å‹¢çš„åŸºç¤ä¸Šï¼Œç¹è‡ªå·±çš„ Y è»¸æ—‹è½‰ openAngle åº¦ï¼Œç•¶ä½œé–‹é–€å§¿å‹¢
         openRot = closedRot * Quaternion.Euler(0f, openAngle, 0f);
+    }
+
+    // çµ¦å¤–éƒ¨å‘¼å«ï¼šè¨­å®šé€™æ‰‡é–€è¦ä¸è¦é–‹
+    public void SetOpen(bool value)
+    {
+        isOpen = value;
     }
 
     private void Update()
     {
-        // Listen for A button (Meta Quest)
-        if (OVRInput.GetDown(OVRInput.Button.One))
-        {
-            globalIsOpen = !globalIsOpen; // Toggle for all doors
-        }
+        // ç›®æ¨™å§¿å‹¢ï¼šé–‹é–€ or é—œé–€
+        Quaternion target = isOpen ? openRot : closedRot;
 
-        // ¥Ø¼Ğ±ÛÂà¡]¥u¦bÃö / ¶}¨â­Ó«º¶Õ¤§¶¡´¡­È¡^
-        Quaternion target = globalIsOpen ? openRot : closedRot;
-
-        // Slerp ¨ì¥Ø¼Ğ¡A§ï¥Î localRotation¡AÁ×§K¾ã­Ó¥@¬Éªº±ÛÂà¼vÅT
+        // åœ¨ç›®å‰ localRotation èˆ‡ç›®æ¨™ä¹‹é–“æ’å€¼
         transform.localRotation = Quaternion.Slerp(
             transform.localRotation,
             target,
