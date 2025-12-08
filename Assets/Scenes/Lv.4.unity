@@ -1314,7 +1314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c01799fa59b026b4896b1652a02f1693, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotateAngle: 90
+  openAngle: 90
   speed: 3
 --- !u!1 &991028807
 GameObject:
