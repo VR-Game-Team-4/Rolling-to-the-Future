@@ -1,57 +1,42 @@
-using UnityEngine;
+﻿using UnityEngine;
 
-public class BlueStoneRotator : MonoBehaviour
+public class StoneGroupRotator : MonoBehaviour
 {
-    public float rotateAngle = 90f; // How much each child will rotate
-    public float speed = 3f;        // Smooth rotation speed
+    public float openAngle = 90f;
+    public float speed = 3f;
 
-    private Quaternion[] originalRotations;  // Default rotations
-    private Quaternion[] targetRotations;    // Rotated target rotations
-
-    private bool rotated = false;            // Current state
+    private Quaternion closedRot;
+    private Quaternion openRot;
+    private bool isOpen = false;
 
     private void Start()
     {
-        int count = transform.childCount;
+        closedRot = transform.localRotation;
+        openRot = closedRot * Quaternion.Euler(0f, openAngle, 0f);
+    }
 
-        originalRotations = new Quaternion[count];
-        targetRotations = new Quaternion[count];
+    public void SetOpen(bool value)
+    {
+        isOpen = value;
+    }
 
-        // Store each child's localRotation as "closed"
-        for (int i = 0; i < count; i++)
-        {
-            Transform child = transform.GetChild(i);
-
-            originalRotations[i] = child.localRotation;
-            targetRotations[i] = child.localRotation * Quaternion.Euler(0f, rotateAngle, 0f);
-        }
+    // 如果想用切換可以加這個（可選）
+    public void Toggle()
+    {
+        isOpen = !isOpen;
     }
 
     private void Update()
     {
-        // Toggle when A button is pressed
-        if (OVRInput.GetDown(OVRInput.Button.One) || Input.GetKeyDown(KeyCode.Space))
+        Quaternion target = isOpen ? openRot : closedRot;
+        if (OVRInput.GetDown(OVRInput.Button.One))
         {
-            rotated = !rotated;
+            Toggle();
         }
-
-        // Smoothly rotate children toward their target pose
-        RotateChildrenSmooth();
-    }
-
-    private void RotateChildrenSmooth()
-    {
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            Transform child = transform.GetChild(i);
-
-            Quaternion target = rotated ? targetRotations[i] : originalRotations[i];
-
-            child.localRotation = Quaternion.Slerp(
-                child.localRotation,
-                target,
-                Time.deltaTime * speed
-            );
-        }
+        transform.localRotation = Quaternion.Slerp(
+            transform.localRotation,
+            target,
+            Time.deltaTime * speed
+        );
     }
 }

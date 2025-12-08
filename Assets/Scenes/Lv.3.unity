@@ -1338,7 +1338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c596ee69d37390446a230ef734d0d01e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  role: 1
+  role: 0
   doorController: {fileID: 934591174}
 --- !u!1001 &565556452
 PrefabInstance:
