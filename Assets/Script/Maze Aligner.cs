@@ -24,7 +24,7 @@ public class StretchAndRoll : MonoBehaviour
 
     public void UnloadLevel()
     {
-      offset.x = 100;
+      offset.x = 2;
     }
 
     void Start()
