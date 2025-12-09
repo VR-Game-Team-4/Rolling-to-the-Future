@@ -2203,6 +2203,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MenuBoard
       objectReference: {fileID: 0}
+    - target: {fileID: 6231712059455929829, guid: bbb5528bf45b6ac43b24abc3416f8b62, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7322597160867510338, guid: bbb5528bf45b6ac43b24abc3416f8b62, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

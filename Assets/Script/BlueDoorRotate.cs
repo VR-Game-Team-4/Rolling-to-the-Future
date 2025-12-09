@@ -26,6 +26,7 @@ public class BlueDoor : MonoBehaviour
 
     private void Update()
     {
+    if (OVRInput.GetDown(OVRInput.Button.One)) isOpen = !isOpen;
         // 目標姿勢：開門 or 關門
         Quaternion target = isOpen ? openRot : closedRot;
 
