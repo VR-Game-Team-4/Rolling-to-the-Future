@@ -17,6 +17,16 @@ public class StretchAndRoll : MonoBehaviour
     private Quaternion baseRotation;
     private Vector3 baseScale;
 
+    public void LoadLevel()
+    {
+      offset.x = 0;
+    }
+
+    public void UnloadLevel()
+    {
+      offset.x = 100;
+    }
+
     void Start()
     {
         // 記錄原始 localRotation
