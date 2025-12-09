@@ -773,6 +773,59 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 6742994776229898709, guid: 6e2509b18a1451649829a3fb15044254, type: 3}
+--- !u!1 &60060827
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 60060828}
+  - component: {fileID: 60060829}
+  m_Layer: 7
+  m_Name: ceiling
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &60060828
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60060827}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 5, z: 50}
+  m_LocalScale: {x: 80, y: 120, z: 120}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1131205979}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &60060829
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60060827}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 0.01, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &62319376
 GameObject:
   m_ObjectHideFlags: 0
@@ -12420,7 +12473,7 @@ MonoBehaviour:
   leftHand: {fileID: 199138428}
   rightHand: {fileID: 1334935866}
   rightHandRotationOffset: {fileID: 1487460515}
-  offset: {x: -1.2, y: 0, z: 0}
+  offset: {x: -0.5, y: 0, z: 0}
   originalZ: 17
 --- !u!4 &825497013
 Transform:
@@ -14503,6 +14556,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5400000, guid: 753ea9ccf9eee6c42a0954ec8663b992, type: 3}
+      propertyPath: m_Drag
+      value: 0.01
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11400000, guid: 753ea9ccf9eee6c42a0954ec8663b992, type: 3}
     - {fileID: 11400002, guid: 753ea9ccf9eee6c42a0954ec8663b992, type: 3}
@@ -14536,7 +14593,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnPoint: {fileID: 527252692}
-  respawnHeightOffset: 0.01
+  respawnHeightOffset: 0
   fallYThreshold: -10
   goalColliders:
   - {fileID: 1032005286}
@@ -17295,6 +17352,7 @@ Transform:
   - {fileID: 1843451446}
   - {fileID: 1883675989}
   - {fileID: 12845680}
+  - {fileID: 60060828}
   m_Father: {fileID: 1240299544}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1132122094
@@ -22143,7 +22201,7 @@ MonoBehaviour:
   leftHand: {fileID: 199138428}
   rightHand: {fileID: 1334935866}
   rightHandRotationOffset: {fileID: 1487460515}
-  offset: {x: 2, y: 0, z: 0}
+  offset: {x: -0.3, y: 0, z: 0}
   originalZ: 17
 --- !u!1 &1610113875
 GameObject:
