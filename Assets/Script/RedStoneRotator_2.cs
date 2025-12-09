@@ -29,7 +29,7 @@ public class StoneGroupRotator2 : MonoBehaviour
     private void Update()
     {
         Quaternion target = isOpen ? openRot : closedRot;
-        if (OVRInput.GetDown(OVRInput.Button.One))
+        if (OVRInput.GetDown(OVRInput.Button.Three))
         {
             Toggle();
         }
