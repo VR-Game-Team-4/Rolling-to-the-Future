@@ -1,12 +1,15 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class StretchAndRoll : MonoBehaviour
 {
     public Transform leftHand;
     public Transform rightHand;
 
-    [Header("¥k¤â±ÛÂà offset¡]¥i¦b Inspector ½Õ¾ã¡^")]
+    [Header("å³æ‰‹æ—‹è½‰ offsetï¼ˆå¯åœ¨ Inspector èª¿æ•´ï¼‰")]
     public Transform rightHandRotationOffset;
+
+    [Header("offset")]
+    public Vector3 offset;
 
     [Header("Original Z Length")]
     public float originalZ;
@@ -16,7 +19,7 @@ public class StretchAndRoll : MonoBehaviour
 
     void Start()
     {
-        // °O¿ı­ì©l localRotation
+        // è¨˜éŒ„åŸå§‹ localRotation
         baseRotation = transform.localRotation;
         baseScale = transform.localScale;
     }
@@ -25,34 +28,36 @@ public class StretchAndRoll : MonoBehaviour
     {
         if (!leftHand || !rightHand) return;
 
-        // --- Step 1: ³]©w Z ¶b¤è¦V ---
+        // --- Step 1: è¨­å®š Z è»¸æ–¹å‘ ---
         Vector3 zDir = (leftHand.position - rightHand.position).normalized;
-
-        // LookRotation ±o¨ì¡uZ ¶b¹ï·Ç¨â¤â¤è¦V¡vªº±ÛÂà
         Quaternion lookRot = Quaternion.LookRotation(zDir, Vector3.up);
 
-
-        // --- Step 2: ¨ú±o¥k¤âªº roll ---
-        // §Ú­Ì·Q­n¥k¤âªº "local axes" ¨ä¤¤¤@­Ó¶b§ë¼v¨ì lookRot ªºªÅ¶¡¤¤
+        // --- Step 2: å–å¾—å³æ‰‹çš„ roll ---
         Quaternion rightRot = rightHand.rotation;
-
         if (rightHandRotationOffset)
             rightRot *= rightHandRotationOffset.localRotation;
 
-        // ¨ú±o¥k¤â¦b¹ï»ô«áªÅ¶¡¤¤ªº¦V¥k¤è¦V
         Vector3 handRight = lookRot * Vector3.right;
         Vector3 wristRight = rightRot * Vector3.right;
 
-        // ­pºâ roll ¨¤¡]Â¶ Z ¶b¡^
         float rollAngle = Vector3.SignedAngle(handRight, wristRight, zDir);
 
-
-        // --- Step 3: ®M¥Î roll ---
+        // --- Step 3: å¥—ç”¨ roll ---
         Quaternion rollRot = Quaternion.AngleAxis(rollAngle, zDir);
 
+        // å…ˆæ±ºå®šæ—‹è½‰
         transform.rotation = rollRot * lookRot;
-        transform.position = rightHand.position;
+
+        // âœ… å°‡ offset è¦–ç‚ºã€Œlocal åº§æ¨™ã€ï¼Œè½‰æˆä¸–ç•Œåç§»
+        // offset.x = æ²¿è‘—ç‰©ä»¶ local Xï¼ˆå‚ç›´å…©æ‰‹é€£ç·šï¼‰åç§»
+        // offset.y = æ²¿è‘—ç‰©ä»¶ local Y åç§»
+        // offset.z = æ²¿è‘—ç‰©ä»¶ local Zï¼ˆå…©æ‰‹é€£ç·šæ–¹å‘ï¼‰åç§»
+        Vector3 worldOffset = transform.rotation * offset;
+        transform.position = rightHand.position + worldOffset;
+
+        // ç¸®æ”¾
         float scalFactor = Vector3.Distance(rightHand.position, leftHand.position) / originalZ;
         transform.localScale = baseScale * scalFactor;
     }
+
 }

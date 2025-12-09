@@ -5,7 +5,7 @@ public class BallController : MonoBehaviour
 {
   [Header("Respawn Settings")]
   public Transform respawnPoint;
-  public float respawnHeightOffset = 1.0f;
+  public float respawnHeightOffset;
   public float fallYThreshold = -10f;
 
   [Header("Goal Settings")]
