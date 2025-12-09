@@ -2891,7 +2891,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftHand: {fileID: 199138428}
   rightHand: {fileID: 1334935866}
-  originalZLength: 17
+  rightHandRotationOffset: {fileID: 0}
+  originalZ: 0
 --- !u!4 &246690800
 Transform:
   m_ObjectHideFlags: 0
@@ -9706,7 +9707,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftHand: {fileID: 199138428}
   rightHand: {fileID: 1334935866}
-  originalZLength: 17
+  rightHandRotationOffset: {fileID: 1487460515}
+  originalZ: 17
 --- !u!4 &825497013
 Transform:
   m_ObjectHideFlags: 0
@@ -12714,7 +12716,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1042361562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12754,7 +12756,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftHand: {fileID: 199138428}
   rightHand: {fileID: 1334935866}
-  originalZLength: 55
+  rightHandRotationOffset: {fileID: 0}
+  originalZ: 0
 --- !u!4 &1042361564
 Transform:
   m_ObjectHideFlags: 0
@@ -16441,6 +16444,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1287422957}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1487460514
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1487460515}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1487460515
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1487460514}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10.542138, y: 13.042188, z: 15.99158}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1508031741
 GameObject:
   m_ObjectHideFlags: 0
@@ -17557,7 +17591,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftHand: {fileID: 199138428}
   rightHand: {fileID: 1334935866}
-  originalZLength: 17
+  rightHandRotationOffset: {fileID: 0}
+  originalZ: 0
 --- !u!1 &1610113875
 GameObject:
   m_ObjectHideFlags: 0
@@ -22367,7 +22402,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftHand: {fileID: 199138428}
   rightHand: {fileID: 1334935866}
-  originalZLength: 17
+  rightHandRotationOffset: {fileID: 0}
+  originalZ: 0
 --- !u!114 &2132361657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22884,3 +22920,4 @@ SceneRoots:
   - {fileID: 1604520855}
   - {fileID: 1042361564}
   - {fileID: 1224807244}
+  - {fileID: 1487460515}
